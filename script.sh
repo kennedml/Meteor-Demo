@@ -31,9 +31,9 @@ pause
 resume
 clear
 
-./fileio -i simple-todos.html -o simple-todos/simple-todos.html
-./fileio -i simple-todos.js -o simple-todos/simple-todos.js
-./fileio -i simple-todos.css -o simple-todos/simple-todos.css
+cp simple-todos.html simple-todos/simple-todos.html
+cp simple-todos.js simple-todos/simple-todos.js
+cp simple-todos.css simple-todos/simple-todos.css
 
 ./fileio -s "cd simple-todos" -k
 echo ""
@@ -55,14 +55,13 @@ clear
 pause
 resume
 
-echo "cd /simple-todos "
+./fileio -s "cd /simple-todos" -k
 
-./fileio -s meteor -k
+echo -e "\n\n"
 cd simple-todos
 pause
 resume
 clear
-tmux new-session -s meteor_demo \; split-window -v meteor
+echo "Continue script in new window"
 
-pause
-resume
+#tmux new-session -s meteor_demo \; split-window -v meteor
