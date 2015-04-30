@@ -19,7 +19,7 @@ resume
 clear
 echo $createApp
 echo $ourApp
-pause
+#pause
 resume
 clear
 echo ""
@@ -27,7 +27,7 @@ echo ""
 echo ""
 
 meteor create simple-todos
-pause
+#pause
 resume
 clear
 
@@ -41,27 +41,20 @@ echo ""
 echo -e "\n\n"
 cat simple-todos.html
 echo -e "\n\n\n"
-pause
+#pause
 resume
 clear
 ./fileio -s "cat simple-todos.js" -k
 echo -e "\n\n"
 cat simple-todos.js
 echo -e "\n\n\n"
-pause
+#pause
 resume
 clear
-
-pause
-resume
 
 ./fileio -s "cd /simple-todos" -k
-
 echo -e "\n\n"
+./fileio -s "meteor" -k
 cd simple-todos
-pause
-resume
-clear
-echo "Continue script in new window"
-
+meteor
 #tmux new-session -s meteor_demo \; split-window -v meteor
